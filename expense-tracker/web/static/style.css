@@ -1,0 +1,32 @@
+/* Стили для форм авторизации */
+.auth-form {
+    background: #fff;
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    max-width: 420px;
+}
+.auth-form label {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+.auth-form input {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    margin-top: 0.2rem;
+}
+
+/* Кнопка «Выйти» в шапке выглядит как ссылка */
+.link-logout {
+    background: transparent;
+    color: #ecf0f1;
+    padding: 0;
+    margin-left: 1rem;
+    font: inherit;
+    cursor: pointer;
+    border: none;
+}
+.link-logout:hover {
+    background: transparent;
+    text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+{{define "content"}}
+<h1>Регистрация</h1>
+
+{{if .Error}}<div class="error">{{.Error}}</div>{{end}}
+
+<form method="POST" action="/register" class="auth-form">
+    <label>Email:
+        <input type="email" name="email" value="{{.Email}}" required>
+    </label>
+    <label>Пароль (не короче 6 символов):
+        <input type="password" name="password" minlength="6" required>
+    </label>
+    <label>Повторите пароль:
+        <input type="password" name="password2" minlength="6" required>
+    </label>
+    <div class="form-actions">
+        <button type="submit">Зарегистрироваться</button>
+        <a class="button secondary" href="/login">У меня есть аккаунт</a>
+    </div>
+</form>
+{{end}}
