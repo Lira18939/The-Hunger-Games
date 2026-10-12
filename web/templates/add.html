@@ -1,0 +1,21 @@
+{{template "header" .}}
+<h2>Добавить трату</h2>
+
+<form method="POST" action="/add/create">
+	<p>
+		<label>Сумма: <input type="number" name="amount" step="0.01" min="0" required></label>
+	</p>
+	<p>
+		<label>Описание: <input type="text" name="description" required></label>
+	</p>
+	<p>
+		<label>Дата: <input type="date" name="date" required></label>
+	</p>
+	<p>
+		<button type="submit">Сохранить</button>
+	</p>
+</form>
+
+<p><a href="/">← Вернуться к списку</a></p>
+
+{{template "footer" .}}
