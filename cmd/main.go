@@ -43,11 +43,17 @@ func main() {
 }
 
 func applyMigrations(db *sql.DB) {
-	sqlBytes, err := os.ReadFile("migrations/001_create_expenses.sql")
-	if err != nil {
-		log.Fatal("Не удалось прочитать миграцию:", err)
+	files := []string{
+		"migrations/001_create_expenses.sql",
+		"migrations/002_add_categories.sql",
 	}
-	if _, err := db.Exec(string(sqlBytes)); err != nil {
-		log.Fatal("Не удалось выполнить миграцию:", err)
+	for _, file := range files {
+		sqlBytes, err := os.ReadFile(file)
+		if err != nil {
+			log.Fatal("Не удалось прочитать миграцию:", err)
+		}
+		if _, err := db.Exec(string(sqlBytes)); err != nil {
+			log.Println("Миграция", file, ":", err)
+		}
 	}
 }
